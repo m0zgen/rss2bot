@@ -5,6 +5,7 @@
 # Imports
 import sqlite3
 import requests
+import urllib
 import feedparser
 import os
 
@@ -17,6 +18,9 @@ myfeeds = [
   'https://sys-adm.in/?format=feed&type=rss',
   'https://forum.sys-adm.in/index.php?action=.xml;type=rss'
 ]
+# Proxies
+proxies = {
+}
 
 # DB
 scriptDir = os.path.dirname(os.path.realpath(__file__))
@@ -45,8 +49,9 @@ def add_article_to_db(article_title, article_date):
 
 # Send notify to Telegram bot
 def bot_sendtext(bot_message):
+    bot_message = urllib.parse.quote(bot_message)
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
-    requests.get(send_text)
+    requests.get(send_text, proxies=proxies)
 
 # Check, read articles
 def read_article_feed(feed):
