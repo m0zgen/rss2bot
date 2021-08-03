@@ -1,0 +1,7 @@
+certifi==2021.5.30
+charset-normalizer==2.0.4
+feedparser==6.0.8
+idna==3.2
+requests==2.26.0
+sgmllib3k==1.0.0
+urllib3==1.26.6
