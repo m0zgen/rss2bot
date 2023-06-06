@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # Created by Yevgeniy Goncharov, https://sys-adm.in
 # Script for reading and forwarding to Telegram, rss feeds
 
