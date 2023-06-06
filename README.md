@@ -21,3 +21,14 @@ Run rss.py:
 ```python
 python rss.py
 ```
+## How to update packages
+
+```shell
+pip3 install pip-upgrader
+```
+
+Upgrade all packages:
+
+```shell
+pip-upgrade
+```
